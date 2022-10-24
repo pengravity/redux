@@ -323,6 +323,10 @@ p {
 .--bg-dark {
   background: var(--color-dark);
 }
+
+.--bg-light-blue {
+  background: var(--light-blue);
+}
 .--bg-primary {
   background: var(--color-primary);
 }

@@ -37,32 +37,43 @@ const Counter = () => {
   };
 
   return (
-    <div className='container --center-all --my2 --py2'>
+    <div className='container --center-all --my2 --py2 --bg-light-blue'>
       <button onClick={toggleAuth} className='--btn --btn-danger'>
-        Log Out
+        {isLoggedIn ? 'Log Out' : 'Log In'}
       </button>
-      <h1>Counter </h1>
-      <h1 className='count'>{count}</h1>
-      <div className='buttons --flex-center'>
-        <button
-          onClick={handleSubtract}
-          className='substract --btn --btn-danger'
-        >
-          Subtract
-        </button>
-        <button onClick={handleReset} className='substract --btn '>
-          Reset
-        </button>
-        <button onClick={handleAdd} className='substract --btn --btn-primary'>
-          Add
-        </button>
-        <button
-          onClick={() => handleAddNumber(10)}
-          className='substract --btn --btn-primary'
-        >
-          Add 10
-        </button>
-      </div>
+      <hr />
+
+      {!isLoggedIn ? (
+        <p>Please Log in</p>
+      ) : (
+        <>
+          <h1>Counter </h1>
+          <h1 className='count'>{count}</h1>
+          <div className='buttons --flex-center'>
+            <button
+              onClick={handleSubtract}
+              className='substract --btn --btn-danger'
+            >
+              Subtract
+            </button>
+            <button onClick={handleReset} className='substract --btn '>
+              Reset
+            </button>
+            <button
+              onClick={handleAdd}
+              className='substract --btn --btn-primary'
+            >
+              Add
+            </button>
+            <button
+              onClick={() => handleAddNumber(10)}
+              className='substract --btn --btn-primary'
+            >
+              Add 10
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

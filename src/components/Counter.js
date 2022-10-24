@@ -1,18 +1,25 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  const count = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const handleAdd = () => {
-    setCount(count + 1);
+    dispatch({
+      type: 'ADD',
+    });
   };
 
   const handleSubtract = () => {
-    setCount(count - 1);
+    dispatch({
+      type: 'SUBTRACT',
+    });
   };
 
   const handleReset = () => {
-    setCount(0);
+    dispatch({
+      type: 'RESET',
+    });
   };
 
   return (

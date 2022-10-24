@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 
 const Counter = () => {
-  const count = useSelector((state) => state);
+  const count = useSelector((state) => state.count);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const dispatch = useDispatch();
 
   const handleAdd = () => {
@@ -29,9 +30,17 @@ const Counter = () => {
     });
   };
 
+  const toggleAuth = () => {
+    dispatch({
+      type: 'TOGGLE_AUTH',
+    });
+  };
+
   return (
     <div className='container --center-all --my2 --py2'>
-      <button className='--btn --btn-danger'>Log Out</button>
+      <button onClick={toggleAuth} className='--btn --btn-danger'>
+        Log Out
+      </button>
       <h1>Counter </h1>
       <h1 className='count'>{count}</h1>
       <div className='buttons --flex-center'>

@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
 // Reducer
 const countReducer = (state = 0, action) => {
@@ -24,7 +24,26 @@ const countReducer = (state = 0, action) => {
   }
 };
 
-// create a store
-const store = createStore(countReducer);
+const authReducer = (state = true, action) => {
+  switch (action.type) {
+    case 'TOGGLE_AUTH': {
+      return (state = !state);
+    }
 
+    default: {
+      return state;
+    }
+  }
+};
+
+const reducers = combineReducers({
+  count: countReducer,
+  isLoggedIn: authReducer,
+});
+
+// create a store
+const store = createStore(
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 export default store;

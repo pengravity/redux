@@ -22,6 +22,13 @@ const Counter = () => {
     });
   };
 
+  const handleAddNumber = (amount) => {
+    dispatch({
+      type: 'ADD_NUMBER',
+      payload: amount,
+    });
+  };
+
   return (
     <div className='container --center-all --my2 --py2'>
       <button className='--btn --btn-danger'>Log Out</button>
@@ -39,6 +46,12 @@ const Counter = () => {
         </button>
         <button onClick={handleAdd} className='substract --btn --btn-primary'>
           Add
+        </button>
+        <button
+          onClick={() => handleAddNumber(10)}
+          className='substract --btn --btn-primary'
+        >
+          Add 10
         </button>
       </div>
     </div>

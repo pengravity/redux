@@ -14,6 +14,10 @@ const countReducer = (state = 0, action) => {
       return state + 1;
     }
 
+    case 'ADD_NUMBER': {
+      return state + action.payload;
+    }
+
     default: {
       return state;
     }

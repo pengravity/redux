@@ -1,6 +1,8 @@
+import { ACTIONS } from '../actions/actionTypes';
+
 const authReducer = (state = true, action) => {
   switch (action.type) {
-    case 'TOGGLE_AUTH': {
+    case ACTIONS.TOGGLE_AUTH: {
       return (state = !state);
     }
 

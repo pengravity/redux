@@ -6,7 +6,7 @@ const authSlice = createSlice({
     isLoggedIn: true,
   },
 
-  reducer: {
+  reducers: {
     // actions
     TOGGLE_AUTH: (state) => {
       state.isLoggedIn = !state.isLoggedIn;

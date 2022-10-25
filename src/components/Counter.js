@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import { ADD, ADD_NUMBER, SUBTRACT, RESET } from './store/slice/counterSlice';
-import { TOGGLE_AUTH } from './store/slice/authSlice';
+import { ADD, ADD_NUMBER, SUBTRACT, RESET } from '../store/slice/counterSlice';
+import { TOGGLE_AUTH } from '../store/slice/authSlice';
 
 const Counter = () => {
   const count = useSelector((state) => state.counter.count);
